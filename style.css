@@ -1,0 +1,259 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================== */
+:root {
+    --vino-tinto: #5a0817;
+    --vino-oscuro: #34020b;
+    --dorado-suave: #f3e5ab;
+    --negro-fondo: #0d0b0c;
+    --tarjeta-bg: #161214;
+    --fuente-titulo: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--negro-fondo);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+header {
+    position: relative;
+    background: url('img/Fondo vino tinto_dorado suave.jpg') center/cover;
+    padding: 45px 20px 35px;
+    border-bottom: 2px solid var(--dorado-suave);
+    overflow: hidden;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 2, 6, 0.75);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(243, 229, 171, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.tagline {
+    font-family: var(--fuente-titulo);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--dorado-suave);
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   BANNER DE CONFIANZA
+   ========================================== */
+.strip-confianza {
+    background: linear-gradient(90deg, var(--vino-oscuro), var(--vino-tinto), var(--vino-oscuro));
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #fce8db;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   SECCIÓN CATÁLOGO Y TARJETAS
+   ========================================== */
+.catalogo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulo);
+    font-size: 2.3rem;
+    color: var(--dorado-suave);
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.producto-card {
+    background-color: var(--tarjeta-bg);
+    border: 1px solid rgba(243, 229, 171, 0.15);
+    border-radius: 12px;
+    width: 290px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--dorado-suave);
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.producto-card:hover .img-wrapper img {
+    transform: scale(1.06);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--vino-tinto);
+    color: var(--dorado-suave);
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--dorado-suave);
+}
+
+/* ==========================================
+   GALERÍA DE MINIATURAS (MULTIFOTO)
+   ========================================== */
+.galeria-miniaturas {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: #120e10;
+    border-bottom: 1px solid rgba(243, 229, 171, 0.1);
+}
+
+.miniatura {
+    width: 45px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.miniatura:hover {
+    opacity: 0.85;
+}
+
+.miniatura.activa {
+    opacity: 1;
+    border-color: var(--dorado-suave);
+    box-shadow: 0 0 6px rgba(243, 229, 171, 0.4);
+}
+
+/* ==========================================
+   INFORMACIÓN DE PRODUCTO
+   ========================================== */
+.info-producto {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.info-producto h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.precio {
+    color: var(--dorado-suave);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 0.85rem;
+    color: #a8a0a3;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   BOTÓN DE WHATSAPP
+   ========================================== */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #1eb954, #0e6c61);
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    padding: 30px 20px;
+    background-color: #080607;
+    border-top: 1px solid rgba(243, 229, 171, 0.1);
+    color: #666;
+    font-size: 0.85rem;
+}
